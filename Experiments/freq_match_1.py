@@ -32,18 +32,18 @@ def get_label_for_row(row):
     :param row:
     :return: BROWSE_NODE_ID for group with highest score
     """
-    global group_word_freq
+    global group_word_freq, column_used
 
     max_score = -1
     predicted_group_label = None
 
     # Taking only bullet points
-    if pd.isna(row['BULLET_POINTS']):
-        print(f"Could not predict for current row")
+    if pd.isna(row[column_used]):
+        # print(f"Could not predict for current row")
         return -1
 
     # print(f"Row bullet point is {row['BULLET_POINTS']}")
-    row_word_freq = FreqDist(nltk.word_tokenize(row['BULLET_POINTS']))
+    row_word_freq = FreqDist(nltk.word_tokenize(row[column_used]))
 
     for group, group_words in group_word_freq.items():
         score = score_individual_group(row_word_freq, group_words)
@@ -60,7 +60,10 @@ def get_label_for_row(row):
 def test_predictions(test_data, num_of_rows):
     # Counts accuracy as well
     rows_predicted_correctly = 0
-    next_percent = 10
+    null_values = 0
+
+    percent_increment = 2.5
+    next_percent = percent_increment
 
     for i in range(num_of_rows):
 
@@ -69,10 +72,15 @@ def test_predictions(test_data, num_of_rows):
         if predicted_group_label == test_data.iloc[i]['BROWSE_NODE_ID']:
             rows_predicted_correctly += 1
 
+        if predicted_group_label == -1:
+            null_values += 1
+
         # Print when additional 10% is done
         if ((i+1)*100/num_of_rows) >= next_percent:
             print(f"Percent done: {((i+1)*100/num_of_rows)}")
-            next_percent += 10
+            print(f"Percent correct: {(rows_predicted_correctly/(i+1))*100}%")
+            print(f"Null values till now: {null_values}, ({null_values*100/(i+1)}%)")
+            next_percent += percent_increment
 
     print(f"Accuracy is {(rows_predicted_correctly/num_of_rows)*100}%")
 
@@ -81,12 +89,15 @@ pd.set_option("display.max_rows", None, "display.max_columns", None, "display.ma
 console = Console()
 
 datapath = r'E:\Amazon ML Challenge\dataset52a7b21\dataset\Processed\train.csv'
-data = pd.read_csv(datapath, nrows=50000)
+data = pd.read_csv(datapath, nrows=100000)
 train, test = train_test_split(data, test_size=0.2)
 node_grp = train.groupby('BROWSE_NODE_ID', axis='index')
 
-sorted_words = node_grp['BULLET_POINTS'].apply(lambda series: sorted(FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)[:20])
+column_used = 'TITLE'
+top_n_group_words = 20
+
+sorted_words = node_grp[column_used].apply(lambda series: sorted(FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)[:top_n_group_words])
 group_word_freq = sorted_words.apply(lambda row: {key: val for key, val in row}).to_dict()
 # console.print(list(group_word_freq.items())[:20])
 
-test_predictions(test, 1000)
+test_predictions(test, 10000)
