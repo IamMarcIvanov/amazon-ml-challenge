@@ -4,6 +4,9 @@ from nltk import FreqDist
 import nltk
 from rich.console import Console
 from _collections import defaultdict
+from collections import Counter
+import time
+import numpy as np
 
 # Download some data
 # nltk.download('punkt')
@@ -21,9 +24,9 @@ def score_individual_group(row_words, group_words):
             score += row_words[word]
 
     # print(f"Group words is\n{group_words}")
-    denominator = sum(group_words.values())
-    if denominator == 0:
-        return -1
+    # denominator = sum(group_words.values())
+    # if denominator == 0:
+    #     return -1
     # score = score/denominator
 
     return score
@@ -133,15 +136,23 @@ def test_predictions(test_data, num_of_rows):
 
 
 def get_group_freq_dict(series):
-    global top_n_group_words
+    global top_n_group_words, group_number
 
-    complete_text = series.str.cat(sep=' ')
-    freq_dict = FreqDist(nltk.word_tokenize(complete_text))
+    # print(f"In group {group_number}")
+    # print(f"Series is {series.values}")
+    # print(f"All added {np.char.join(' ', series.values)}")
+    # group_number += 1
+    sorted_norm_freq =  Counter(' '.join(series.astype(str)).split()).most_common(top_n_group_words)
+    # print(f"series is {series.}")
+    # complete_text = series.str.cat(sep=' ')
+    # freq_dict = FreqDist(nltk.word_tokenize(complete_text))
     # denom = len(series)
     # norm_freq_dict = {key: value/denom for (key, value) in freq_dict.items()}
-    sorted_norm_freq = sorted(freq_dict.items(), key=lambda kv: kv[1], reverse=True)[:top_n_group_words]
+    # sorted_norm_freq = sorted(freq_dict.items(), key=lambda kv: kv[1], reverse=True)[:top_n_group_words]
 
     return sorted_norm_freq
+
+    # return pd.Series(' '.join(series.astype(str)).split()).value_counts()[:top_n_group_words].to_dict()
 
 
 
@@ -156,18 +167,35 @@ node_grp = train.groupby('BROWSE_NODE_ID', axis='index')
 column_weights = {'TITLE': 0.6, 'DESCRIPTION': 0.3, 'BRAND': 0.1}
 top_n_group_words = 20
 
+# test_series = pd.Series(['hi', 'hi Shar', 'Shar', 4])
+# console.print(pd.Series(' '.join(test_series.astype(str)).split()).value_counts()[:top_n_group_words].to_dict())
+group_number = 0
+
+start = time.time()
 sorted_words_all = {}
+# group_word_freq_all = {}
 for column in column_weights:
     print(f"Getting group frequencies for {column}")
+    # group_number = 0
+    # node_grp[column].aggregate(get_group_freq_dict)
     sorted_words_all[column] = node_grp[column].apply(get_group_freq_dict)
+    # console.print("One group is\n",sorted_words_all[column][6])
+    # sorted_words_all[column] = node_grp.apply(lambda series: pd.Series(' '.join(series).split()).value_counts()[:top_n_group_words])
+
+end = time.time()
+print(f"Time to get sorted_words={end-start}")
 # lambda series: sorted(FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)[:top_n_group_words]
 
 #FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)
 
+start = time.time()
 group_word_freq_all = {}
 for column in column_weights:
-    group_word_freq_all[column] = sorted_words_all[column].apply(lambda row: {key: val for key, val in row}).to_dict()
+    group_word_freq_all[column] = sorted_words_all[column].aggregate(lambda row: {key: val for key, val in row}).to_dict()
+    # console.print("One group is\n", group_word_freq_all[column][6])
+end = time.time()
 
+print(f"Time to convert to dictionary={end-start}")
 #console.print(list(group_word_freq.items())[:20])
 
 test_predictions(test, 10000)

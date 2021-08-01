@@ -41,7 +41,7 @@ lem = WordNetLemmatizer()
 stopWords = set(stopwords.words('english'))
 
 infile = r'E:\Amazon ML Challenge\dataset52a7b21\dataset\train.csv'
-outfile = r'E:\Amazon ML Challenge\dataset52a7b21\dataset\Processed\stemmer_train.csv'
+outfile = r'E:\Amazon ML Challenge\dataset52a7b21\dataset\Processed\performance_check_train.csv'
 step = 10000
 to_remove = string.punctuation + string.digits
 
@@ -49,9 +49,9 @@ for i in range(20):
     print(f"i is {i}")
     df = pd.read_csv(infile, skiprows=step * i, nrows=step, names=['TITLE', 'DESCRIPTION', 'BULLET_POINTS', 'BRAND', 'BROWSE_NODE_ID'], escapechar="\\", quoting = 3, header=0)
 
-    df['TITLE'] = df['TITLE'].apply(cleaning_function)
-    df['DESCRIPTION'] = df['DESCRIPTION'].apply(cleaning_function)
-    df['BULLET_POINTS'] = df['BULLET_POINTS'].apply(cleaning_function)
+    df['TITLE'] = df['TITLE'].transform(cleaning_function)
+    df['DESCRIPTION'] = df['DESCRIPTION'].transform(cleaning_function)
+    df['BULLET_POINTS'] = df['BULLET_POINTS'].transform(cleaning_function)
 
     df.to_csv(outfile, mode='w' if i==0 else 'a', header=True if i==0 else False, index=False)
 
