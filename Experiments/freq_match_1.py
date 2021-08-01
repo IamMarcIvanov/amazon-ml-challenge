@@ -3,6 +3,7 @@ import pandas as pd
 from nltk import FreqDist
 import nltk
 from rich.console import Console
+from _collections import defaultdict
 
 # Download some data
 # nltk.download('punkt')
@@ -16,16 +17,31 @@ def score_individual_group(row_words, group_words):
     score = 0
     for word in row_words:
         if word in group_words:
-            score += group_words[word] * row_words[word]
-            # score += row_words[word]
+            # score += group_words[word] * row_words[word]
+            score += row_words[word]
 
     # print(f"Group words is\n{group_words}")
     denominator = sum(group_words.values())
     if denominator == 0:
         return -1
-    score = score/denominator
+    # score = score/denominator
 
     return score
+
+def score_individual_column_all_groups(row_val, column_group_word_freq):
+
+    score_dict = defaultdict(int)
+
+    if pd.isna(row_val):
+        # print(f"Could not predict for current row")
+        return score_dict
+
+    row_word_freq = FreqDist(nltk.word_tokenize(row_val))
+
+    for group, group_words in column_group_word_freq.items():
+        score_dict[group] = score_individual_group(row_word_freq, group_words)
+
+    return score_dict
 
 def get_label_for_row(row):
     """
@@ -33,15 +49,34 @@ def get_label_for_row(row):
     :param row:
     :return: BROWSE_NODE_ID for group with highest score
     """
-    global group_word_freq, column_used
+    global group_word_freq_all, column_weights
 
     max_score = -1
     predicted_group_label = None
 
+    all_scores = {column: defaultdict(int) for column in column_weights.keys()}
+
+    for column in column_weights:
+        # print(f"Using column {column}")
+        all_scores[column] = score_individual_column_all_groups(row[column], group_word_freq_all[column])
+
+    all_groups_set = set()
+    for column in column_weights:
+        all_groups_set = all_groups_set.union(set(all_scores[column].keys()))
+
+    for group in all_groups_set:
+        # print(f"Summing scores")
+        score_sum = sum([all_scores[column][group]*weight for (column, weight) in column_weights.items()])
+        if score_sum > max_score:
+            predicted_group_label = group
+            max_score = score_sum
+
+    return predicted_group_label, max_score
+
     # Taking only bullet points
     if pd.isna(row[column_used]):
         # print(f"Could not predict for current row")
-        return -1
+        return -1, -1
 
     # print(f"Row bullet point is {row['BULLET_POINTS']}")
     row_word_freq = FreqDist(nltk.word_tokenize(row[column_used]))
@@ -54,32 +89,34 @@ def get_label_for_row(row):
 
     # print(f"Max_score is {max_score}. Group is {predicted_group_label}")
     # print(f"Actual group is {row['BROWSE_NODE_ID']}")
+# ,max_score
+    return predicted_group_label, max_score
 
-    return predicted_group_label
 
 
 def test_predictions(test_data, num_of_rows):
     # Counts accuracy as well
-    global group_word_freq, column_used
+    global group_word_freq_all, column_weights
 
     rows_predicted_correctly = 0
     null_values = 0
 
-    percent_increment = 2.5
+    percent_increment = 0.5
     next_percent = percent_increment
 
     for i in range(num_of_rows):
 
         # print(f"Predicting for\n{test_data.iloc[i]}")
-        predicted_group_label= get_label_for_row(test_data.iloc[i])
+        # , score
+        predicted_group_label, score= get_label_for_row(test_data.iloc[i])
         if predicted_group_label == test_data.iloc[i]['BROWSE_NODE_ID']:
             rows_predicted_correctly += 1
         # else:
         #     actual_group_label = test_data.iloc[i]['BROWSE_NODE_ID']
         #     row_word_freq = FreqDist(nltk.word_tokenize(test_data.iloc[i][column_used]))
-        #     print(f"\nPREDICTED SCORE : {score}   ACTUAL SCORE {score_individual_group(row_word_freq, group_word_freq[actual_group_label])}")
-        #     print(f"predicted group {predicted_group_label}\nactual group {actual_group_label}\ntest data : {test_data.iloc[i]}")
-        #     console.print(f'predict word freq {group_word_freq[predicted_group_label]}\nactual word freq : {group_word_freq[actual_group_label]}')
+        #     print(f"\nPREDICTED SCORE: {score}   ACTUAL SCORE: {score_individual_group(row_word_freq, group_word_freq[actual_group_label])}")
+        #     print(f"predicted group: {predicted_group_label}  actual group: {actual_group_label}\n\ntest data : \n{test_data.iloc[i]}")
+        #     console.print(f'predict word freq {group_word_freq[predicted_group_label]}\n\nactual word freq : {group_word_freq[actual_group_label]}')
         #     break
 
         if predicted_group_label == -1:
@@ -95,23 +132,42 @@ def test_predictions(test_data, num_of_rows):
     print(f"Accuracy is {(rows_predicted_correctly/num_of_rows)*100}%")
 
 
+def get_group_freq_dict(series):
+    global top_n_group_words
+
+    complete_text = series.str.cat(sep=' ')
+    freq_dict = FreqDist(nltk.word_tokenize(complete_text))
+    # denom = len(series)
+    # norm_freq_dict = {key: value/denom for (key, value) in freq_dict.items()}
+    sorted_norm_freq = sorted(freq_dict.items(), key=lambda kv: kv[1], reverse=True)[:top_n_group_words]
+
+    return sorted_norm_freq
+
+
+
 pd.set_option("display.max_rows", None, "display.max_columns", None, "display.max_colwidth", 200)
 console = Console()
 
-datapath = r'/mnt/d/amazon-ml/dataset/Processed/train3.csv'
-data = pd.read_csv(datapath, nrows=100000)
+datapath = r'E:\Amazon ML Challenge\dataset52a7b21\dataset\Processed\stemmer_train.csv'
+data = pd.read_csv(datapath, nrows=200000)
 train, test = train_test_split(data, test_size=0.2)
 node_grp = train.groupby('BROWSE_NODE_ID', axis='index')
 
-column_used = 'TITLE'
+column_weights = {'TITLE': 0.6, 'DESCRIPTION': 0.3, 'BRAND': 0.1}
 top_n_group_words = 20
 
-sorted_words = node_grp[column_used].apply(lambda series: sorted(FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)[:top_n_group_words])
+sorted_words_all = {}
+for column in column_weights:
+    print(f"Getting group frequencies for {column}")
+    sorted_words_all[column] = node_grp[column].apply(get_group_freq_dict)
+# lambda series: sorted(FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)[:top_n_group_words]
 
 #FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)
 
+group_word_freq_all = {}
+for column in column_weights:
+    group_word_freq_all[column] = sorted_words_all[column].apply(lambda row: {key: val for key, val in row}).to_dict()
 
-group_word_freq = sorted_words.apply(lambda row: {key: val for key, val in row}).to_dict()
 #console.print(list(group_word_freq.items())[:20])
 
 test_predictions(test, 10000)
@@ -124,60 +180,34 @@ scoring -> direct addition with lemmetization                 42%
 scoring -> multiply with weight and add with lemmetization    21%
 scoring -> direct addition with porter stemmer                48%
 scoring -> weighted average with porter stemmer               39-40%             
-
-
-
 problems with scoring
-
 1 -> 
 2 ->
 3 ->
-
 problems with pre-processing
-
-
-
 6 102*1 ->
-
 7 2*5 -> 
-
 6 -> []
-
 [gismo oneplus back cover printed designer soft case oneplus design]
 [0 0 20 0 19 18] -> [] 
-
 5000    
 40  50  60
 3   4   2
-
 'cover': 6359, 'back': 6012, 'case': 4656, 'printed': 3377,
 'designer': 2511, 'hard': 2100, 'samsung': 1453, 'galaxy': 1357, 'mobile': 1245, 'soft': 1086, 'redmi': 921, 'vivo':
 888, 'black': 812, 'design': 798, 'note': 720, 'oppo': 708, 'plus': 636, 'xiaomi': 609, 'iphone': 579, 'silicone': 560
-
 flipflops / flipflop / flip flop -> ngram to battle this
-
 {flip, lipf, ipfl, }
-
 4 ->1
 5 ->2
 6 ->3
-
 one plus/oneplus 
-
 {'oneplus': 2, 'back': 2, 'cover': 2, 'case': 2, 'mobbysol®': 1, 'colour': 1, 'full': 1, 'protective':
 1, 'plus': 1, 'five': 1, 'black': 1}, 
 actual word freq : {'cover': 6359, 'back': 6012, 'case': 4656, 'printed': 3377,
 'designer': 2511, 'hard': 2100, 'samsung': 1453, 'galaxy': 1357, 'mobile': 1245, 'soft': 1086, 'redmi': 921, 'vivo':
 888, 'black': 812, 'design': 798, 'note': 720, 'oppo': 708, 'plus': 636, 'xiaomi': 609, 'iphone': 579, 'silicone': 560}
-
-
-
 degre full bodi protect front back case cover ipaki style vivo gold
-
-
 actual ->  2 
 predicted -> 1
-
-
-
 '''
