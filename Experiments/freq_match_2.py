@@ -1,17 +1,18 @@
 from sklearn.model_selection import train_test_split
 import pandas as pd
-from nltk import FreqDist
-import nltk
 from rich.console import Console
 from collections import defaultdict
 from collections import Counter
+from sklearn.metrics import accuracy_score
 import time
 import numpy as np
 import cProfile
 import pstats
+from numba import jit, njit
 
 # Download some data
 # nltk.download('punkt')
+@jit(nopython=True)
 def score_individual_group(row_words, group_words):
     """
     Calculate row score for a particular group
@@ -29,11 +30,9 @@ def score_individual_group(row_words, group_words):
 def score_individual_column_all_groups(row_val, column_group_word_freq):
 
     score_dict = defaultdict(int)
-
     if pd.isna(row_val):
         return score_dict
-
-    row_word_freq = FreqDist(nltk.word_tokenize(row_val))
+    row_word_freq = Counter(row_val.split())
 
     for group, group_words in column_group_word_freq.items():
         score_dict[group] = score_individual_group(row_word_freq, group_words)
@@ -75,7 +74,8 @@ def get_label_for_row(row):
     row_word_freq = FreqDist(nltk.word_tokenize(row[column_used]))
 
     for group, group_words in group_word_freq.items():
-        score = score_individual_group(row_word_freq, group_words)
+        set_grp = set(group_words)
+        score = score_individual_group(row_word_freq, set_grp)
         if score > max_score:
             max_score = score
             predicted_group_label = group
@@ -88,28 +88,9 @@ def test_predictions(test_data, num_of_rows):
     # Counts accuracy as well
     global group_word_freq_all, column_weights
 
-    rows_predicted_correctly = 0
-    null_values = 0
+    predicted_group_label = test_data.apply(get_label_for_row, axis=1)
 
-    percent_increment = 0.5
-    next_percent = percent_increment
-
-    for i in range(num_of_rows):
-        predicted_group_label, score= get_label_for_row(test_data.iloc[i])
-        if predicted_group_label == test_data.iloc[i]['BROWSE_NODE_ID']:
-            rows_predicted_correctly += 1
-
-        if predicted_group_label == -1:
-            null_values += 1
-
-        # Print when additional 10% is done
-        if ((i+1)*100/num_of_rows) >= next_percent:
-            print(f"Percent done: {((i+1)*100/num_of_rows)}")
-            print(f"Percent correct: {(rows_predicted_correctly/(i+1))*100}%")
-            print(f"Null values till now: {null_values}, ({null_values*100/(i+1)}%)")
-            next_percent += percent_increment
-
-    print(f"Accuracy is {(rows_predicted_correctly/num_of_rows)*100}%")
+    print(f"Accuracy is {(accuracy_score(test_data['BROWSE_NODE_ID'], predicted_group_label))*100}%")
 
 
 def get_group_freq_dict(series):
@@ -154,4 +135,4 @@ with cProfile.Profile() as pr:
 
 stats = pstats.Stats(pr)
 stats.sort_stats(pstats.SortKey.TIME)
-stats.dump_stats(filename=r'D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\Performance\freq_match_2_perf2.txt')
+stats.dump_stats(filename=r'D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\Performance\freq_match_2_perf5.prof')
