@@ -1,0 +1,321 @@
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+ 11112912   29.897    0.000   91.007    0.000 D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\freq_match_2.py:15(score_individual_group)
+175069584   25.791    0.000   61.110    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\probability.py:471(__iter__)
+  8559333   12.380    0.000   12.380    0.000 {built-in method builtins.sorted}
+ 11112912    9.223    0.000   31.877    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\collections\__init__.py:600(most_common)
+ 11112912    6.631    0.000   21.398    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\heapq.py:521(nlargest)
+     6000    4.399    0.001   97.140    0.016 D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\freq_match_2.py:29(score_individual_column_all_groups)
+     2000    3.642    0.002  104.888    0.052 D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\freq_match_2.py:43(get_label_for_row)
+  4122000    2.392    0.000    2.392    0.000 D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\freq_match_2.py:64(<listcomp>)
+ 11112912    2.293    0.000    3.442    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\probability.py:151(B)
+19884074/19864007    2.013    0.000    2.034    0.000 {built-in method builtins.len}
+ 15240308    1.631    0.000    1.631    0.000 {method 'items' of 'dict' objects}
+  2553589    1.247    0.000    1.247    0.000 {built-in method builtins.max}
+  4122000    0.704    0.000    0.704    0.000 {built-in method builtins.sum}
+   167259    0.569    0.000    0.681    0.000 {method 'sub' of 're.Pattern' objects}
+     6000    0.409    0.000    0.409    0.000 {method 'union' of 'set' objects}
+  2558985    0.323    0.000    0.323    0.000 {built-in method builtins.iter}
+     1202    0.234    0.000    0.234    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+        1    0.207    0.207  106.876  106.876 D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\freq_match_2.py:87(test_predictions)
+   318321    0.114    0.000    0.165    0.000 {built-in method builtins.isinstance}
+   151060    0.110    0.000    0.110    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\re.py:325(_subx)
+     1202    0.106    0.000    0.106    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+    10787    0.096    0.000    0.120    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1330(_slices_from_text)
+     8000    0.093    0.000    0.136    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\numpy\core\numerictypes.py:575(_can_coerce_all)
+     5395    0.086    0.000    0.780    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\destructive.py:106(tokenize)
+     4000    0.082    0.000    0.529    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\managers.py:935(fast_xs)
+     4000    0.070    0.000    0.569    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\series.py:315(__init__)
+    97358    0.056    0.000    0.056    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\probability.py:123(__setitem__)
+     4000    0.054    0.000    0.353    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\cast.py:1790(find_common_type)
+     8000    0.053    0.000    0.215    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\series.py:1034(_get_value)
+     5394    0.052    0.000    0.210    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\data.py:203(normalize_resource_name)
+    10787    0.045    0.000    0.112    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\ntpath.py:61(isabs)
+     8000    0.045    0.000    0.285    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\series.py:928(__getitem__)
+     5394    0.042    0.000    0.046    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\data.py:120(split_resource_url)
+     5392    0.042    0.000    0.098    0.000 {built-in method _collections._count_elements}
+    16184    0.040    0.000    0.050    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\ntpath.py:124(splitdrive)
+     5393    0.039    0.000    0.379    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\data.py:147(normalize_resource_url)
+     4000    0.039    0.000    1.165    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\frame.py:3366(_ixs)
+     8000    0.038    0.000    0.038    0.000 {method 'get_loc' of 'pandas._libs.index.IndexEngine' objects}
+     4000    0.036    0.000    0.129    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\construction.py:463(sanitize_array)
+    76000    0.036    0.000    0.036    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\numpy\core\numerictypes.py:584(<listcomp>)
+     4000    0.036    0.000    1.316    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexing.py:1535(_getitem_axis)
+     5395    0.032    0.000    0.058    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\ntpath.py:450(normpath)
+     5392    0.030    0.000    0.447    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\data.py:662(load)
+     5392    0.027    0.000    0.185    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\collections\__init__.py:581(__init__)
+     5394    0.027    0.000    0.027    0.000 {method 'search' of 're.Pattern' objects}
+     5392    0.026    0.000    0.689    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\__init__.py:97(sent_tokenize)
+     4000    0.025    0.000    0.130    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\blocks.py:1916(new_block)
+    25590    0.025    0.000    0.025    0.000 {method 'split' of 'str' objects}
+    48000    0.024    0.000    0.033    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\generic.py:43(_check)
+     8000    0.024    0.000    0.056    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:5175(_get_values_for_loc)
+     8000    0.023    0.000    0.106    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:3317(get_loc)
+     4000    0.021    0.000    0.031    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:190(is_sparse)
+     8000    0.020    0.000    0.045    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:5696(_maybe_cast_indexer)
+     4000    0.020    0.000    0.029    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\generic.py:230(__init__)
+     8000    0.020    0.000    0.064    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\generic.py:5480(__setattr__)
+     4000    0.020    0.000    1.342    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexing.py:918(__getitem__)
+    20000    0.020    0.000    0.020    0.000 {pandas._libs.lib.is_list_like}
+    10787    0.020    0.000    0.156    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1345(_realign_boundaries)
+     5392    0.018    0.000    0.158    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\probability.py:137(update)
+     8000    0.017    0.000    0.047    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1264(is_bool_dtype)
+     5392    0.017    0.000    0.798    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\__init__.py:131(<listcomp>)
+    20000    0.017    0.000    0.017    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\blocks.py:349(iget)
+     4000    0.016    0.000    0.016    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\managers.py:950(<listcomp>)
+     4000    0.016    0.000    0.053    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\blocks.py:1875(get_block_type)
+     4000    0.016    0.000    0.021    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\generic.py:553(_get_axis)
+     5393    0.016    0.000    0.016    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\compat.py:25(add_py3_data)
+     5392    0.016    0.000    0.016    0.000 {method 'format' of 'str' objects}
+     8000    0.015    0.000    0.015    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:2130(is_floating)
+    43155    0.015    0.000    0.015    0.000 {method 'replace' of 'str' objects}
+     4000    0.015    0.000    0.015    0.000 {built-in method numpy.empty}
+     5392    0.015    0.000    1.501    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\__init__.py:115(word_tokenize)
+     7796    0.014    0.000    0.014    0.000 {method 'finditer' of 're.Pattern' objects}
+     4000    0.014    0.000    0.028    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:574(is_dtype_equal)
+     6000    0.014    0.000    0.028    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\missing.py:144(_isna)
+     5392    0.014    0.000    0.014    0.000 {built-in method _abc._abc_instancecheck}
+     5397    0.014    0.000    0.025    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\re.py:289(_compile)
+     8000    0.014    0.000    0.019    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\managers.py:1670(internal_values)
+     4000    0.013    0.000    0.021    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:4587(__getitem__)
+     5392    0.013    0.000    0.198    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\probability.py:88(__init__)
+     4000    0.013    0.000    0.036    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\_config\config.py:96(_get_single_key)
+     4000    0.013    0.000    0.042    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\common.py:100(is_bool_indexer)
+    32365    0.013    0.000    0.013    0.000 {method 'startswith' of 'str' objects}
+     5392    0.013    0.000    0.140    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\collections\__init__.py:649(update)
+     4000    0.013    0.000    0.156    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\managers.py:1565(from_array)
+     6000    0.013    0.000    0.013    0.000 {built-in method pandas._libs.missing.checknull}
+     4000    0.013    0.000    0.158    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\numpy\core\numerictypes.py:599(find_common_type)
+     4000    0.013    0.000    0.033    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\construction.py:674(_try_cast)
+     5392    0.013    0.000    0.200    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1270(tokenize)
+     5392    0.013    0.000    0.187    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1321(sentences_from_text)
+    12000    0.012    0.000    0.014    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\construction.py:431(ensure_wrapped_if_datetimelike)
+    64000    0.012    0.000    0.012    0.000 {built-in method builtins.getattr}
+     4000    0.012    0.000    0.046    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexing.py:1482(_validate_integer)
+     4000    0.012    0.000    0.015    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\_config\config.py:565(_get_root)
+10808/10787    0.012    0.000    0.136    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:308(_pair_iter)
+    12000    0.011    0.000    0.015    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\common.py:155(cast_scalar_indexer)
+    10787    0.011    0.000    0.168    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1310(span_tokenize)
+     8000    0.011    0.000    0.011    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\_config\config.py:579(_get_deprecated_option)
+     5394    0.011    0.000    0.059    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\re.py:198(search)
+     8000    0.011    0.000    0.030    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\series.py:674(_values)
+    12000    0.010    0.000    0.015    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\common.py:346(apply_if_callable)
+     4000    0.010    0.000    0.022    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1230(is_float_dtype)
+    16001    0.010    0.000    0.015    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:794(__len__)
+     4000    0.010    0.000    0.027    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\series.py:627(name)
+    16000    0.010    0.000    0.074    0.000 {built-in method builtins.all}
+     4000    0.010    0.000    0.028    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\blocks.py:1843(maybe_coerce_values)
+    18000    0.010    0.000    0.010    0.000 {pandas._libs.lib.is_scalar}
+     8000    0.010    0.000    0.038    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\cast.py:1814(<genexpr>)
+     4000    0.010    0.000    0.010    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\series.py:528(_set_axis)
+     4000    0.009    0.000    0.017    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\series.py:577(name)
+     4000    0.009    0.000    0.010    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:314(is_datetime64_dtype)
+     4000    0.009    0.000    0.019    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\base.py:34(__len__)
+     4000    0.009    0.000    0.009    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\flags.py:47(__init__)
+     4000    0.008    0.000    0.362    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\base.py:145(interleaved_dtype)
+    16000    0.008    0.000    0.016    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1543(get_dtype)
+     8000    0.008    0.000    0.067    0.000 {built-in method builtins.any}
+     4000    0.008    0.000    0.008    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\numpy\core\numerictypes.py:651(<listcomp>)
+     4000    0.008    0.000    0.058    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\_config\config.py:114(_get_option)
+     4000    0.008    0.000    0.009    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\managers.py:1535(__init__)
+    10880    0.008    0.000    0.008    0.000 {method 'get' of 'dict' objects}
+     8000    0.008    0.000    0.014    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1578(_is_dtype_type)
+    20000    0.008    0.000    0.008    0.000 {pandas._libs.lib.is_integer}
+     4000    0.007    0.000    0.007    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\generic.py:5464(__getattr__)
+        1    0.007    0.007    0.007    0.007 {built-in method io.open}
+     8000    0.007    0.000    0.012    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1744(pandas_dtype)
+     8000    0.007    0.000    0.011    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1420(is_extension_array_dtype)
+     4000    0.007    0.000    0.007    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexing.py:133(iloc)
+     4000    0.007    0.000    0.012    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\blocks.py:1931(check_ndim)
+     5392    0.007    0.000    0.174    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1328(<listcomp>)
+     4000    0.006    0.000    0.065    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\_config\config.py:242(__call__)
+     4006    0.006    0.000    0.006    0.000 {built-in method fromkeys}
+     4000    0.006    0.000    0.008    0.000 <frozen importlib._bootstrap>:1033(_handle_fromlist)
+    10787    0.006    0.000    0.007    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\ntpath.py:34(_get_bothseps)
+     8000    0.006    0.000    0.034    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\construction.py:369(extract_array)
+     6000    0.006    0.000    0.035    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\missing.py:61(isna)
+    32367    0.006    0.000    0.006    0.000 {built-in method nt.fspath}
+    12000    0.006    0.000    0.053    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\cast.py:1836(<genexpr>)
+     4000    0.006    0.000    0.013    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\generic.py:434(_validate_dtype)
+     2000    0.006    0.000    0.006    0.000 D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\freq_match_2.py:54(<dictcomp>)
+      601    0.005    0.000    0.367    0.001 {built-in method builtins.print}
+     8000    0.005    0.000    0.009    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\inference.py:321(is_hashable)
+     8000    0.005    0.000    0.005    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\managers.py:1615(_block)
+     4000    0.005    0.000    0.017    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1718(validate_all_hashable)
+     5392    0.005    0.000    0.006    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:277(period_context_re)
+     4000    0.005    0.000    0.009    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\construction.py:606(_sanitize_ndim)
+     4000    0.005    0.000    0.011    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:160(is_object_dtype)
+     1202    0.005    0.000    0.007    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\colorama\ansitowin32.py:245(convert_osc)
+    24000    0.005    0.000    0.005    0.000 {built-in method builtins.issubclass}
+     4000    0.005    0.000    0.008    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\generic.py:3834(_set_is_copy)
+     1202    0.005    0.000    0.358    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\colorama\ansitowin32.py:177(write_and_convert)
+     4000    0.005    0.000    0.009    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\construction.py:781(is_empty_data)
+     4000    0.005    0.000    0.010    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:6382(maybe_extract_name)
+     4000    0.005    0.000    0.005    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\generic.py:539(_get_axis_number)
+        1    0.004    0.004    0.004    0.004 {built-in method _pickle.load}
+     4000    0.004    0.000    0.004    0.000 {method 'astype' of 'numpy.ndarray' objects}
+    12000    0.004    0.000    0.006    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\cast.py:1820(<genexpr>)
+     8000    0.004    0.000    0.015    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\cast.py:1829(<genexpr>)
+     1202    0.004    0.000    0.344    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\colorama\ansitowin32.py:193(write_plain_text)
+     8000    0.004    0.000    0.008    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1737(<genexpr>)
+     4000    0.004    0.000    0.004    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\_config\config.py:547(_select_options)
+     4000    0.004    0.000    0.013    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\_config\config.py:618(_warn_if_deprecated)
+    12000    0.004    0.000    0.004    0.000 {built-in method builtins.callable}
+    11071    0.004    0.000    0.004    0.000 {method 'join' of 'str' objects}
+     8000    0.004    0.000    0.004    0.000 {built-in method builtins.hash}
+    12000    0.004    0.000    0.004    0.000 {method 'keys' of 'dict' objects}
+     5392    0.004    0.000    0.018    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\abc.py:96(__instancecheck__)
+     8000    0.004    0.000    0.004    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:144(classes)
+    12000    0.004    0.000    0.004    0.000 {pandas._libs.lib.is_float}
+     4000    0.004    0.000    0.010    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\blocks.py:1973(extract_pandas_array)
+     8000    0.003    0.000    0.007    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\cast.py:1831(<genexpr>)
+     8000    0.003    0.000    0.003    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\blocks.py:238(mgr_locs)
+     4000    0.003    0.000    0.004    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:388(is_timedelta64_dtype)
+     4000    0.003    0.000    0.015    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\inference.py:184(is_array_like)
+     5418    0.003    0.000    0.003    0.000 {method 'endswith' of 'str' objects}
+     5392    0.003    0.000    0.003    0.000 {method 'rstrip' of 'str' objects}
+     8000    0.003    0.000    0.003    0.000 {built-in method builtins.hasattr}
+     4000    0.003    0.000    0.003    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:6280(ensure_index)
+5406/5392    0.003    0.000    0.122    0.000 {built-in method builtins.next}
+     4000    0.003    0.000    0.008    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\common.py:526(require_length_match)
+     5395    0.003    0.000    0.003    0.000 {method 'lstrip' of 'str' objects}
+     8000    0.003    0.000    0.004    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:146(<lambda>)
+     1202    0.002    0.000    0.360    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\colorama\ansitowin32.py:160(write)
+     4000    0.002    0.000    0.003    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\construction.py:663(_maybe_repeat)
+     4000    0.002    0.000    0.002    0.000 {pandas._libs.lib.is_iterator}
+     4000    0.002    0.000    0.005    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexers.py:66(is_list_like_indexer)
+     4000    0.002    0.000    0.003    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\construction.py:643(_sanitize_str_dtypes)
+     4000    0.002    0.000    0.003    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\dtypes\common.py:1409(is_1d_only_ea_dtype)
+     4000    0.002    0.000    0.002    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\managers.py:245(items)
+     4000    0.002    0.000    0.002    0.000 {pandas._libs.lib.item_from_zerodim}
+     8000    0.002    0.000    0.002    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\typing.py:1333(cast)
+     4000    0.002    0.000    0.004    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\_config\config.py:606(_translate_key)
+     1202    0.002    0.000    0.362    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\colorama\ansitowin32.py:40(write)
+     4000    0.001    0.000    0.001    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\numpy\core\numerictypes.py:652(<listcomp>)
+       23    0.001    0.000    0.001    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:355(_escape)
+      215    0.001    0.000    0.001    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:1054(expand_template)
+     39/5    0.001    0.000    0.002    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:493(_parse)
+       12    0.000    0.000    0.000    0.000 {built-in method nt.stat}
+      215    0.000    0.000    0.001    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\re.py:331(filter)
+     1036    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:233(__next)
+      898    0.000    0.000    0.001    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:254(get)
+     54/4    0.000    0.000    0.001    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:71(_compile)
+       28    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:969(parse_template)
+      300    0.000    0.000    0.000    0.000 {method 'group' of 're.Match' objects}
+      290    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:164(__getitem__)
+       47    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:978(addgroup)
+     22/4    0.000    0.000    0.002    0.001 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:435(_parse_sub)
+      819    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+       17    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:276(_optimize_charset)
+     33/9    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:174(getwidth)
+       21    0.000    0.000    0.002    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:549(_tokenize_words)
+       14    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:396(__init__)
+       14    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:600(_first_pass_annotation)
+      186    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:249(match)
+       27    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:295(_class_escape)
+        4    0.000    0.000    0.003    0.001 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:759(compile)
+       14    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1520(_second_pass_annotation)
+      120    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:160(__len__)
+        7    0.000    0.000    0.000    0.000 {method 'findall' of 're.Pattern' objects}
+       17    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:249(_compile_charset)
+       32    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:224(__init__)
+       66    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:172(append)
+        4    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:536(_compile_info)
+        7    0.000    0.000    0.003    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1375(text_contains_sentbreak)
+       63    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:111(__init__)
+       21    0.000    0.000    0.003    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1510(_annotate_second_pass)
+        1    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedReader' objects}
+       71    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+        1    0.000    0.000    0.001    0.001 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\data.py:471(find)
+       62    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:286(tell)
+        5    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1603(_ortho_heuristic)
+        5    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:413(<listcomp>)
+       28    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\re.py:315(_compile_repl)
+        4    0.000    0.000    0.002    0.001 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:937(parse)
+       21    0.000    0.000    0.003    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:579(_annotate_first_pass)
+       25    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        4    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:953(__and__)
+       45    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
+        5    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:411(_mk_bitmap)
+       84    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        7    0.000    0.000    0.002    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:245(_word_tokenizer_re)
+       14    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:419(_get_type)
+       22    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:168(__setitem__)
+       12    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:334(__call__)
+       16    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:423(_simple)
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:993(_decompose)
+        4    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+        7    0.000    0.000    0.002    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:261(word_tokenize)
+       14    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:460(is_ellipsis)
+       12    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:646(__new__)
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:914(_create_pseudo_member_)
+        6    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:432(_uniq)
+        2    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:221(_re_non_word_chars)
+        4    0.000    0.000    0.001    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:598(_code)
+      4/3    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:461(_get_literal_prefix)
+       81    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+       11    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:423(type_no_period)
+        2    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:947(__or__)
+        1    0.000    0.000    0.008    0.008 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\data.py:857(_open)
+        5    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\genericpath.py:27(isfile)
+       10    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:442(first_upper)
+        7    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:267(getuntil)
+        9    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        5    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:84(opengroup)
+        7    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:1411(_annotate_tokens)
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\nturl2path.py:8(url2pathname)
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\cProfile.py:117(__exit__)
+       18    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:81(groups)
+       12    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\types.py:171(__get__)
+        5    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\genericpath.py:39(isdir)
+        3    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:492(_get_charset_prefix)
+       30    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:921(fix_flags)
+        4    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:76(__init__)
+        3    0.000    0.000    0.000    0.000 {method 'translate' of 'str' objects}
+        7    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:470(is_initial)
+        7    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:65(_combine_flags)
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\ntpath.py:77(join)
+        5    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_parse.py:96(closegroup)
+        1    0.000    0.000    0.007    0.007 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\data.py:324(open)
+        1    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\frame.py:1352(__len__)
+        1    0.000    0.000    0.000    0.000 {built-in method pandas._libs.lib.is_datetime_array}
+       12    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:432(type_no_sentperiod)
+        8    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:595(isstring)
+       10    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:414(<genexpr>)
+        5    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:447(first_lower)
+        3    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\re.py:270(escape)
+        1    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:2389(_is_all_dates)
+        1    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\data.py:303(__init__)
+        5    0.000    0.000    0.000    0.000 {method 'translate' of 'bytearray' objects}
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\ntpath.py:524(abspath)
+       12    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:768(value)
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:904(_missing_)
+        2    0.000    0.000    0.003    0.001 D:\BoxOfPandora\Installations\Python3.9\lib\re.py:250(compile)
+        1    0.000    0.000    0.000    0.000 {built-in method nt._getfullpathname}
+        1    0.000    0.000    0.000    0.000 {method 'sort' of 'list' objects}
+        7    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\compat.py:39(_decorator)
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\re.py:188(match)
+        2    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\genericpath.py:16(exists)
+        7    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        7    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\sre_compile.py:453(_get_iscased)
+       10    0.000    0.000    0.000    0.000 {method 'isupper' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\internals\blocks.py:344(dtype)
+        1    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:206(_re_sent_end_chars)
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:410(__iter__)
+        3    0.000    0.000    0.000    0.000 {method 'start' of 're.Match' objects}
+        5    0.000    0.000    0.000    0.000 {method 'islower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\urllib\parse.py:642(unquote)
+        1    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x00007FFFE2355C60}
+        3    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 {method 'index' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_object}
+        1    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 D:\BoxOfPandora\Installations\Python3.9\lib\enum.py:1016(<lambda>)
+        1    0.000    0.000    0.000    0.000 {method 'groups' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\pandas\core\indexes\base.py:4379(_values)
+        1    0.000    0.000    0.000    0.000 D:\LibraryOfBabel\Environments\amazon_ml_challenge3.9\lib\site-packages\nltk\tokenize\punkt.py:200(__setstate__)
+        1    0.000    0.000    0.000    0.000 {built-in method _stat.S_ISREG}
+        1    0.000    0.000    0.000    0.000 {built-in method _stat.S_ISDIR}
