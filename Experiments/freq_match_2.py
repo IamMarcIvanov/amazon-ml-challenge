@@ -154,4 +154,4 @@ with cProfile.Profile() as pr:
 
 stats = pstats.Stats(pr)
 stats.sort_stats(pstats.SortKey.TIME)
-stats.print_stats()
+stats.dump_stats(filename=r'D:\LibraryOfBabel\Projects\AmazonMLChallenge\Experiments\Performance\freq_match_2_perf2.txt')
