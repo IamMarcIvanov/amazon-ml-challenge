@@ -5,13 +5,13 @@ import numpy as np
 from nltk import FreqDist
 import nltk
 from rich.console import Console
-import spacy
-import timeit
+# import spacy
+# import timeit
 
 
 
 # Load the spacy model that you have installed
-nlp = spacy.load('en_core_web_md')
+# nlp = spacy.load('en_core_web_md')
 
 def score_individual_group(row_words, group_words):
     """
@@ -108,38 +108,43 @@ def test_predictions(test_data, num_of_rows):
 
 console = Console()
 
-datapath = r'/mnt/d/amazon-ml/dataset/Processed/train3.csv'
-data = pd.read_csv(datapath, nrows=100000)
+datapath = r'D:\Svalbard\Data\AmazonMLChallengeData\dataset\Processed\train.csv'
+data = pd.read_csv(datapath, nrows=50000)
 train, test = train_test_split(data, test_size=0.2)
-node_grp = train.groupby('BROWSE_NODE_ID', axis='index')
+brand_grp = train.groupby('BRAND', axis='index')
 
-column_used = 'TITLE'
-top_n_group_words = 20
+brand_node = brand_grp['BROWSE_NODE_ID'].apply(lambda series: series.unique().tolist()).to_dict()
+count = 0
+n = len(test)
+for ind, row in test.iterrows():
+    if row['BROWSE_NODE_ID'] in brand_node.get(row['BRAND'], [-1]):
+        count += 1
+print(count / n)
 
-sorted_words = node_grp[column_used].apply(lambda series: sorted(FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)[:top_n_group_words])
+# sorted_words = node_grp[column_used].apply(lambda series: sorted(FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)[:top_n_group_words])
 
-#FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)
+# #FreqDist(nltk.word_tokenize(series.str.cat(sep=' '))).items(), key=lambda k: k[1], reverse=True)
 
 
-group_word_freq = sorted_words.apply(lambda row: {key: val for key, val in row}).to_dict()
+# group_word_freq = sorted_words.apply(lambda row: {key: val for key, val in row}).to_dict()
 
-vector_word_dict = {}
-freq_word_dict = {}
-lst = list(group_word_freq.items())
+# vector_word_dict = {}
+# freq_word_dict = {}
+# lst = list(group_word_freq.items())
 
-start = timeit.timeit()
+# start = timeit.timeit()
 
-for grp in lst:
-    top_words=grp[1]
-    for word, freq in top_words.items():
-        if word not in vector_word_dict:
-            vector_word_dict[word] = nlp(word)
-            freq_word_dict[word] = freq
-        else:
-            freq_word_dict[word] += freq 
-end = timeit.timeit()
-print(f"DONE : vector and freq list for unique words made in {end-start}")
-test_predictions(test, 10000)   
+# for grp in lst:
+    # top_words=grp[1]
+    # for word, freq in top_words.items():
+        # if word not in vector_word_dict:
+            # vector_word_dict[word] = nlp(word)
+            # freq_word_dict[word] = freq
+        # else:
+            # freq_word_dict[word] += freq 
+# end = timeit.timeit()
+# print(f"DONE : vector and freq list for unique words made in {end-start}")
+# test_predictions(test, 10000)   
             
 
 

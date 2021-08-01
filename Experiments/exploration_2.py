@@ -4,6 +4,7 @@ from nltk.corpus import stopwords
 import string
 from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
+import math
 
 
 # Downloads
@@ -11,9 +12,6 @@ from nltk.stem import PorterStemmer
 # nltk.download('wordnet')
 
 def cleaning_function(data):
-    global to_remove, stopWords, lem, ps
-
-    # print(f"{data}")
     if pd.isna(data):
         return None
 
@@ -40,14 +38,13 @@ ps = PorterStemmer()
 lem = WordNetLemmatizer()
 stopWords = set(stopwords.words('english'))
 
-infile = r'/mnt/d/amazon-ml/dataset/train.csv'
-outfile = r'/mnt/d/amazon-ml/dataset/Processed/train3.csv'
+infile = r'D:\Svalbard\Data\AmazonMLChallengeData\dataset\test.csv'
+outfile = r'D:\Svalbard\Data\AmazonMLChallengeData\dataset\Processed\test.csv'
 step = 10000
 to_remove = string.punctuation + string.digits
-
-for i in range(10):
+for i in range(math.ceil(110775 / step)):
     print(f"i is {i}")
-    df = pd.read_csv(infile, skiprows=step * i, nrows=step, names=['TITLE', 'DESCRIPTION', 'BULLET_POINTS', 'BRAND', 'BROWSE_NODE_ID'], escapechar="\\", quoting = 3, header=0)
+    df = pd.read_csv(infile, skiprows=step * i, nrows=step, names=['PRODUCT_ID', 'TITLE', 'DESCRIPTION', 'BULLET_POINTS', 'BRAND'], escapechar="\\", quoting = 3, header=0)
 
     df['TITLE'] = df['TITLE'].apply(cleaning_function)
     df['DESCRIPTION'] = df['DESCRIPTION'].apply(cleaning_function)
